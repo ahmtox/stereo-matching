@@ -100,7 +100,8 @@ class CameraCalibration:
                 calObjPoints.append(objpoints.astype('float32'))
                 calImgPoints.append(imgpoints.astype('float32'))
 
-        return calObjPoints, calImgPoints, total_valid
+        h, w = img.shape
+        return calObjPoints, calImgPoints, total_valid, h, w
 
 
     def detect_aprilboard(self, img, board, apriltag_detector):
@@ -190,14 +191,14 @@ class CameraCalibration:
 
         return intersections
 
-    def calibrate_camera(self, filepath, img_height, img_width, plot=False):
+    def calibrate_camera(self, filepath, plot=False):
 
-        calObjPoints, calImgPoints, total_valid = self.detect_fiducials(filepath, plot)
+        calObjPoints, calImgPoints, total_valid, h, w = self.detect_fiducials(filepath, plot)
 
         reprojerr, calMatrix, distCoeffs, calRotations, calTranslations = cv2.calibrateCamera(
             calObjPoints,
             calImgPoints,
-            (img_height, img_width),    # uses image H,W to initialize the principal point to (H/2,W/2)
+            (h, w),    # uses image H,W to initialize the principal point to (H/2,W/2)
             None,         # no initial guess for the remaining entries of calMatrix
             None,         # initial guesses for distortion coefficients are all 0
             flags = None) # default contstraints (see documentation)
