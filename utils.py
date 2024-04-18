@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 class StereogramGenerator:
 
     def __init__(self):
-        pass
+        self.binary_image = None
+        self.shifted_image = None
 
     def generate_stereogram(self, height, width, horizontal_shift):
 
