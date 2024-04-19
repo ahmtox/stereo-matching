@@ -227,4 +227,4 @@ class CameraCalibration:
             print(f"Extrinsic matrix for image {i+1}:\n{extrinsic_matrix}")
 
 
-        return reprojerr, calMatrix, distCoeffs, calRotations, calTranslations, extrinsic_matrices
+        return reprojerr, calMatrix, distCoeffs, calRotations, calTranslations, extrinsic_matrices, calObjPoints, calImgPoints
