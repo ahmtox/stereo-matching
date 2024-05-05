@@ -48,7 +48,7 @@ class CameraCalibration:
         ###### BEGIN CALIBRATION SCRIPT
 
         # exit if no images are found or if BOARD is unrecognized
-        images = glob.glob(CALIBFILES)
+        images = sorted(glob.glob(CALIBFILES))
         assert images, "no calibration images matching: " + CALIBFILES
         assert BOARD==at_fineboard or BOARD==at_coarseboard, "Unrecognized AprilBoard"
 
