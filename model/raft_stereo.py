@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from update import BasicMultiUpdateBlock
+from model.update import BasicMultiUpdateBlock
 from extractor import BasicEncoder, MultiBasicEncoder, ResidualBlock
 from corr import CorrBlock1D, PytorchAlternateCorrBlock1D, CorrBlockFast1D, AlternateCorrBlock
 from utils import coords_grid, upflow8
