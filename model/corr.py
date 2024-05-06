@@ -1,6 +1,6 @@
 import torch
 import torch.nn.functional as F
-from utils import bilinear_sampler
+from model.utils import bilinear_sampler
 
 try:
     import corr_sampler
