@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from model.update import BasicMultiUpdateBlock
-from extractor import BasicEncoder, MultiBasicEncoder, ResidualBlock
-from corr import CorrBlock1D, PytorchAlternateCorrBlock1D, CorrBlockFast1D, AlternateCorrBlock
-from utils import coords_grid, upflow8
+from model.extractor import BasicEncoder, MultiBasicEncoder, ResidualBlock
+from model.corr import CorrBlock1D, PytorchAlternateCorrBlock1D, CorrBlockFast1D, AlternateCorrBlock
+from model.utils import coords_grid, upflow8
 
 
 try:
