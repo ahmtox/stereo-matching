@@ -178,3 +178,9 @@ camera_right/
 camera_left/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+
+camera_right_final/
+camera_left_final/
+
+left.jpeg
+right.jpeg
